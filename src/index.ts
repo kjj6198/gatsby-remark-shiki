@@ -1,8 +1,8 @@
-import shiki from 'shiki';
-import { Theme } from 'shiki-themes';
-import { Lang, ILanguageRegistration } from 'shiki-languages';
-import { Node } from 'unist';
-import visit from 'unist-util-visit';
+import { getHighlighter, loadTheme } from "shiki";
+import { Theme } from "shiki-themes";
+import { Lang, ILanguageRegistration } from "shiki-languages";
+import { Node } from "unist";
+import visit from "unist-util-visit";
 
 export interface RemarkShikiOptions {
   theme: Theme;
@@ -15,30 +15,22 @@ export interface RemarkNode extends Node {
   lang: null | Lang;
 }
 
-export default async function(
+export default async function (
   { markdownAST }: any,
   options: RemarkShikiOptions
 ) {
-  let theme = options.theme || 'nord';
-  let shikiTheme;
+  let theme = options.theme || "nord";
 
-  try {
-    shikiTheme = shiki.getTheme(theme);
-  } catch (_) {
-    try {
-      shikiTheme = shiki.loadTheme(theme);
-    } catch (_) {
-      throw new Error('Unable to load theme: ' + theme);
-    }
-  }
 
-  const highlighter = await shiki.getHighlighter({
+  const shikiTheme = await loadTheme(theme)
+
+  const highlighter = await getHighlighter({
     theme: shikiTheme,
     langs: options.langs || [],
   });
 
-  visit(markdownAST, 'code', (node: RemarkNode) => {
-    node.type = 'html';
+  visit(markdownAST, "code", (node: RemarkNode) => {
+    node.type = "html";
     node.children = undefined;
 
     if (!node.lang) {
