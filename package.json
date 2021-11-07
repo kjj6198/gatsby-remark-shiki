@@ -15,7 +15,7 @@
     "shiki",
     "remark"
   ],
-  "name": "@kjj6198/remark-shiki",
+  "name": "@kjj6198/gatsby-remark-shiki",
   "author": "Kirill Vasiltsov (@jlkiri)",
   "description": "modified from gatsby-remark-shiki (update version)",
   "dependencies": {
