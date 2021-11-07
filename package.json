@@ -1,27 +1,11 @@
 {
   "version": "0.2.1",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "src/index.js",
   "bugs": {
     "url": "https://github.com/jlkiri/gatsby-remark-shiki/issues"
   },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build"
-  },
   "peerDependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
   "prettier": {
     "printWidth": 80,
     "semi": true,
@@ -38,13 +22,6 @@
   "author": "Kirill Vasiltsov (@jlkiri)",
   "module": "dist/gatsby-remark-shiki.esm.js",
   "homepage": "https://github.com/jlkiri/gatsby-remark-shiki",
-  "devDependencies": {
-    "@types/jest": "^25.1.2",
-    "husky": "^4.2.3",
-    "tsdx": "^0.12.3",
-    "tslib": "^1.10.0",
-    "typescript": "^3.7.5"
-  },
   "dependencies": {
     "shiki": "^0.9.12",
     "unist-util-visit": "^2.0.1"
