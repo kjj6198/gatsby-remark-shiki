@@ -2,12 +2,9 @@ const { getHighlighter, loadTheme } = require('shiki')
 const visit = require('unist-util-visit')
 
 module.exports = async function parse({ markdownAST }, options) {
-  let theme = options.theme || "nord";
-
-  const shikiTheme = await loadTheme(theme)
 
   const highlighter = await getHighlighter({
-    theme: shikiTheme,
+    theme: 'nord',
     langs: options.langs || [],
   });
 

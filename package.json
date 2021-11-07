@@ -2,9 +2,6 @@
   "version": "0.2.1",
   "license": "MIT",
   "main": "src/index.js",
-  "bugs": {
-    "url": "https://github.com/jlkiri/gatsby-remark-shiki/issues"
-  },
   "peerDependencies": {},
   "prettier": {
     "printWidth": 80,
@@ -18,10 +15,9 @@
     "shiki",
     "remark"
   ],
-  "name": "gatsby-remark-shiki",
+  "name": "@kjj6198/remark-shiki",
   "author": "Kirill Vasiltsov (@jlkiri)",
-  "module": "dist/gatsby-remark-shiki.esm.js",
-  "homepage": "https://github.com/jlkiri/gatsby-remark-shiki",
+  "description": "modified from gatsby-remark-shiki (update version)",
   "dependencies": {
     "shiki": "^0.9.12",
     "unist-util-visit": "^2.0.1"
